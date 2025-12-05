@@ -93,6 +93,7 @@ These are implemented in `main.py` now.
 
 ## Project Structure
 
+```
 zuras-hackpad/
 ├── CAD/
 │   ├── HackPad_Bottom.step
@@ -114,6 +115,7 @@ zuras-hackpad/
 │   ├── Schematic.png
 │   └── Top.png
 └── README.md
+```
 
 ---
 

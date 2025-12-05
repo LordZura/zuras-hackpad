@@ -145,24 +145,6 @@ zuras-hackpad/
 
 ---
 
-## Submission Checklist
-- [x] PCB ≤100×100 mm  
-- [x] 2 layers  
-- [x] XIAO RP2040 (TH)  
-- [x] ≤16 inputs  
-- [x] Only approved parts  
-- [x] Full STEP model  
-- [x] 3D printed case  
-- [x] All files uploaded  
-- [x] README complete  
-
----
-
-## License
-MIT License recommended.
-
----
-
 ## Credits
 Created by **Zura (LordZura)**  
 Powered by **KiCad, Onshape, Seeed XIAO RP2040, KMK, Hack Club Blueprint**

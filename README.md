@@ -86,13 +86,24 @@ Designed, modeled, and PCB-routed as a Hack Club *Blueprint* submission.
 
 zuras-hackpad/
 ├── CAD/
-│   └── ZuraHackPad.step
+    ├── HackPad_Bottom.step
+    ├── HackPad_Top.step
+│   └── HackPad_Assembly.step
 ├── PCB/
-│   ├── zuras-hackpad.kicad_pro
-│   ├── zuras-hackpad.kicad_sch
-│   └── zuras-hackpad.kicad_pcb
+│   ├── HackPad.kicad_pro
+│   ├── HackPad.kicad_sch
+│   └── HackPad.kicad_pcb
 ├── Firmware/
 │   └── main.py
+├── Images/
+|   ├── Bottom.png
+|   ├── Debug.png
+|   ├── Full.png
+|   ├── PDC-Back.png
+|   ├── PDC-Finish.png
+|   ├── PDC-Front.png
+|   ├── Schematic.png
+│   └── Top.png
 └── README.md
 
 ---

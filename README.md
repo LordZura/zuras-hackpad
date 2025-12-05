@@ -82,6 +82,7 @@ Designed, modeled, and PCB-routed as a Hack Club *Blueprint* submission.
 
 ---
 
+```
 ## 🗂 Project Structure
 
 zuras-hackpad/
@@ -105,6 +106,7 @@ zuras-hackpad/
 |   ├── Schematic.png
 │   └── Top.png
 └── README.md
+```
 
 ---
 

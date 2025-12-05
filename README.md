@@ -96,11 +96,31 @@ zuras-hackpad/
 
 ## 📸 Required Screenshots (for submission)
 
-![HackPad top part](Images/Top.png)
-![HackPad bottom part](images/Bottom.png)
-![HackPad full model](images/Full.png)
-![HackPad PCB](images/PCB.png)
-![HackPad schematic](images/SCH.png)
+## 🖼 Project Images
+
+### 🔹 Top View  
+![HackPad Top](Images/Top.png)
+
+### 🔹 Bottom View  
+![HackPad Bottom](Images/Bottom.png)
+
+### 🔹 Full 3D Model  
+![HackPad Full Model](Images/Full.png)
+
+### 🔹 PCB – Front Side  
+![HackPad PCB Front](Images/PDC-Front.png)
+
+### 🔹 PCB – Back Side  
+![HackPad PCB Back](Images/PDC-Back.png)
+
+### 🔹 PCB – Final Routing View  
+![HackPad PCB Final](Images/PDC-Finish.png)
+
+### 🔹 Schematic  
+![HackPad Schematic](Images/Schematic.png)
+
+### 🔹 Debug Screenshot  
+![HackPad Debug](Images/Debug.png)
 
 ---
 

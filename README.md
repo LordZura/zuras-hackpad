@@ -125,8 +125,9 @@ zuras-hackpad/
 ### Bottom View  
 ![HackPad Bottom](Images/Bottom.png)
 
-### 3D Model  
-![HackPad Full Model](Images/Full.png)
+### Assembled Case With All The Components
+
+![HackPad Full Model](Images/WithComponent.png)
 
 ### PCB – Front  
 ![HackPad PCB Front](Images/PDC-Front.png)

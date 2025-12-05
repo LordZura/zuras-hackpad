@@ -1,40 +1,50 @@
 # 🎛 Zura’s HackPad  
-A fully custom macropad built for my Linux workflow: 4 hotkeys, a rotary encoder with a push switch, RGB underglow, and a 0.91" I²C OLED display — all powered by a Seeed XIAO RP2040.  
-Designed, modeled, and PCB-routed as a Hack Club *Blueprint* submission.
+A fully custom Linux-focused macropad featuring 4 programmable hotkeys, a rotary encoder with push switch, RGB underglow, and a 0.91” I²C OLED display — all powered by a Seeed XIAO RP2040.  
+Designed, modeled, and routed entirely for the Hack Club *Blueprint* program.
 
 ---
 
 ## ✨ Features
 
-### 🧷 4 Custom Macro Keys
-| Key | Name | Behavior |
-|-----|------|----------|
-| **CP** | Smart Copy/Paste | First press → copy; second press → paste; if nothing is selected, paste directly. |
-| **FC** | Folder Create | Instantly creates a new folder in the currently highlighted directory. |
-| **OT** | Open Terminal | Opens a terminal window in the current file explorer folder. |
-| **LFN** | Fn Lock | Toggles laptop F1–F12 keys to work without holding Fn (software-based toggle). |
+### 🔹 Current Working Features (Firmware-ready)
+These are implemented in `main.py` now.
 
-### 🎚 Rotary Encoder (With Push Switch)
-- Rotate: Volume up/down (or Brightness, Media, Scroll depending on mode).  
-- Press: Cycle between modes (Volume → Brightness → Media → Custom).
+#### 🧷 4 Macro Keys
+| Key | Name | Current Behavior |
+|-----|------|------------------|
+| **CP** | Copy | Sends `Ctrl + C` |
+| **FC** | Folder Create | Sends `Ctrl + Shift + N` |
+| **OT** | Open Terminal | Sends `Ctrl + Alt + T` |
+| **LFN** | Fn Lock | Sends `F14` (used by Linux for Fn-Lock on some systems) |
 
-### 🖥 OLED Display
-- Shows whether something is currently copied (CP state).  
-- Displays Volume, Brightness, Battery %, and Time.  
-- Overheat / high-temperature warning indicator.  
-- Optional animations or mode indicators.
+#### 🎚 Rotary Encoder
+- Rotate: Volume Up / Down  
+- Press: currently basic input (extended features planned)
 
-### 🌈 RGB Underglow
-- 2× SK6812 MINI addressable LEDs  
-- Mode colors, warning colors, and idle glow effects.
+#### 🌈 RGB Underglow (SK6812 MINI)
+- 2 LED chain  
+- Controlled via GPIO0  
+- Basic color output active (animations planned)
 
-### 🧩 Fully 3D-Printed Enclosure
-- Top plate with switch cutouts  
-- Encoder hole  
-- OLED window  
-- Rear USB-C tunnel  
-- Bottom shell with heat-set inserts  
-- Smooth fillets for comfort and a clean look
+---
+
+### 🔹 Planned / Future Features
+These are intended features, not required for submission.
+
+#### 🧷 Smart Copy/Paste
+- First press copies  
+- Second press pastes  
+- Clipboard-empty → paste anyway  
+
+#### 🎚 Encoder Modes
+- Cycle between: Volume → Brightness → Media → Custom  
+
+#### 🖥 OLED Display
+- Clipboard indicator  
+- Volume & brightness  
+- Battery/time  
+- Overheat warning  
+- Mode icons & animations  
 
 ---
 
@@ -42,53 +52,52 @@ Designed, modeled, and PCB-routed as a Hack Club *Blueprint* submission.
 
 | # | Component | Qty | Notes |
 |---|-----------|-----|-------|
-| 1 | Seeed XIAO RP2040 (TH) | 1 | Main MCU, USB-C |
-| 2 | MX Mechanical Switches | 4 | Any Cherry MX-compatible |
-| 3 | EC11 Rotary Encoder w/ Switch | 1 | A/B/C + S1/S2 pins |
-| 4 | SK6812 MINI LEDs | 2 | DIN → DOUT chained |
-| 5 | 0.91" I²C OLED Display | 1 | Pins: GND / VCC / SCL / SDA |
-| 6 | 4-pin Female Header | 1 | For OLED mounting |
-| 7 | Keycaps | 4 | MX-compatible |
-| 8 | M3 screws + heat-set inserts | 4 | For case assembly |
-| 9 | Custom 2-layer PCB | 1 | ≤100×100 mm |
-
-----
-
-## System Layout
-
-**XIAO RP2040 → Components (from KiCad)**
-
-- **SW1 (CP key)** → GPIO26 / A0  
-- **SW2 (FC key)** → GPIO27 / A1  
-- **SW3 (OT key)** → GPIO28 / A2  
-- **SW4 (LFN key)** → GPIO29 / A3  
-
-- **Rotary Encoder**
-  - A → GPIO2 / SCK  
-  - B → GPIO4 / MISO  
-  - C → GND  
-
-- **RGB LEDs (SK6812 MINI)**
-  - XIAO GPIO0 / TX → D1 DIN  
-  - D1 DOUT → D2 DIN  
-  - VDD of D1 & D2 → +5 V (VBUS)  
-  - VSS of D1 & D2 → GND  
-
-- **0.91" I²C OLED Header (J1)**
-  - Pin 1 → GND  
-  - Pin 2 → 3V3  
-  - Pin 3 → SCL (GPIO7)  
-  - Pin 4 → SDA (GPIO6)
+| 1 | Seeed XIAO RP2040 (TH) | 1 | Main MCU |
+| 2 | MX Mechanical Switches | 4 | Cherry-MX compatible |
+| 3 | EC11 Rotary Encoder w/ Switch | 1 | A/B/C pins + push |
+| 4 | SK6812 MINI LEDs | 2 | DIN → DOUT chain |
+| 5 | 0.91" I²C OLED Display | 1 | GND/VCC/SCL/SDA |
+| 6 | 4-pin Female Header | 1 | For OLED |
+| 7 | Keycaps | 4 | MX |
+| 8 | M3 Screws + Heat-Set Inserts | 4 | Case |
+| 9 | Custom PCB (2-layer) | 1 | ≤100×100 mm |
 
 ---
 
-```
+## 🔌 System Layout  
+(Directly from KiCad nets)
+
+### Switches → XIAO
+- SW1 → GPIO26  
+- SW2 → GPIO27  
+- SW3 → GPIO28  
+- SW4 → GPIO29  
+
+### Rotary Encoder
+- A → GPIO2  
+- B → GPIO4  
+- C → GND  
+
+### RGB LEDs (SK6812)
+- MCU GPIO0 → D1 DIN  
+- D1 DOUT → D2 DIN  
+- VDD → +5V  
+- VSS → GND  
+
+### OLED Header (J1)
+- Pin 1 → GND  
+- Pin 2 → 3V3  
+- Pin 3 → SCL (GPIO7)  
+- Pin 4 → SDA (GPIO6)
+
+---
+
 ## 🗂 Project Structure
 
 zuras-hackpad/
 ├── CAD/
-    ├── HackPad_Bottom.step
-    ├── HackPad_Top.step
+│   ├── HackPad_Bottom.step
+│   ├── HackPad_Top.step
 │   └── HackPad_Assembly.step
 ├── PCB/
 │   ├── HackPad.kicad_pro
@@ -97,22 +106,19 @@ zuras-hackpad/
 ├── Firmware/
 │   └── main.py
 ├── Images/
-|   ├── Bottom.png
-|   ├── Debug.png
-|   ├── Full.png
-|   ├── PDC-Back.png
-|   ├── PDC-Finish.png
-|   ├── PDC-Front.png
-|   ├── Schematic.png
+│   ├── Bottom.png
+│   ├── Debug.png
+│   ├── Full.png
+│   ├── PDC-Back.png
+│   ├── PDC-Finish.png
+│   ├── PDC-Front.png
+│   ├── Schematic.png
 │   └── Top.png
 └── README.md
-```
 
 ---
 
-## 📸 Required Screenshots (for submission)
-
-## 🖼 Project Images
+## 📸 Required Screenshots
 
 ### 🔹 Top View  
 ![HackPad Top](Images/Top.png)
@@ -120,88 +126,79 @@ zuras-hackpad/
 ### 🔹 Bottom View  
 ![HackPad Bottom](Images/Bottom.png)
 
-### 🔹 Full 3D Model  
+### 🔹 3D Model  
 ![HackPad Full Model](Images/Full.png)
 
-### 🔹 PCB – Front Side  
+### 🔹 PCB – Front  
 ![HackPad PCB Front](Images/PDC-Front.png)
 
-### 🔹 PCB – Back Side  
+### 🔹 PCB – Back  
 ![HackPad PCB Back](Images/PDC-Back.png)
 
-### 🔹 PCB – Final Routing View  
+### 🔹 PCB – Final Routing  
 ![HackPad PCB Final](Images/PDC-Finish.png)
 
 ### 🔹 Schematic  
 ![HackPad Schematic](Images/Schematic.png)
 
-### 🔹 Debug Screenshot  
+### 🔹 Debug  
 ![HackPad Debug](Images/Debug.png)
 
 ---
 
 ## 🔌 Firmware (KMK / CircuitPython)
 
-Firmware responsibilities:
+Firmware currently supports:
+- 4 switches  
+- Rotary encoder  
+- SK6812 LEDs  
+- Basic macros  
 
-- Scan 4 switches  
-- Read rotary encoder A/B/SW  
-- Display info on OLED (copy state, system values, warnings)  
-- Drive SK6812 LEDs  
-- Send OS-level keycodes or macros  
-- Implement Fn-lock behavior  
-- Open terminal / create folders through macro sequences
-
-Stored in:
-
-Firmware/main.py
-
-- Copy CircuitPython UF2 onto the board
-- Drag the `KMK` folder + `boot.py` (from KMK) onto the USB drive
-- Copy `main.py` from this folder onto the drive
-- Press reset – the macropad should start working
+### Flashing Steps
+1. Flash CircuitPython UF2  
+2. Copy KMK folder + boot.py  
+3. Copy `main.py`  
+4. Reset → starts running  
 
 ---
 
 ## 🏗 Build Steps
 
-### 1. PCB
-- Export Gerbers from KiCad  
-- Order 2-layer ≤100×100 mm board
+### PCB
+- Export Gerbers  
+- Order 2-layer board
 
-### 2. Case
-- Export STEP as STL  
-- 3D-print top + bottom shells  
-- Insert heat-sets  
-- Fit OLED + encoder + switches  
+### Case
+- Export STEP/STL  
+- 3D print  
+- Add heat-sets  
+- Install parts  
 
-### 3. Assembly
-- Solder MCU, switches, RGB LEDs, OLED header  
-- Screw enclosure together  
-- Flash CircuitPython → drag KMK → place main.py  
+### Assembly
+- Solder components  
+- Screw case  
+- Flash firmware  
 
 ---
 
 ## 🚀 Submission Checklist
-
-- [x] PCB ≤100 mm × 100 mm  
-- [x] 2-layer PCB  
+- [x] PCB ≤100×100 mm  
+- [x] 2 layers  
 - [x] XIAO RP2040 (TH)  
 - [x] ≤16 inputs  
-- [x] Only approved components  
+- [x] Only approved parts  
+- [x] Full STEP model  
 - [x] 3D printed case  
-- [x] Complete STEP model  
-- [x] Schematic + PCB + Firmware added  
-- [x] README finished  
-- [x] Submitted via Hack Club Dashboard  
+- [x] All files uploaded  
+- [x] README complete  
 
 ---
 
 ## 🧾 License
-MIT recommended.
+MIT License recommended.
 
 ---
 
 ## 🙌 Credits
-Made by: Zura (LordZura)  
-Powered by: KiCad, Onshape, Seeed XIAO RP2040, KMK, Hack Club Blueprint
+Created by **Zura (LordZura)**  
+Powered by **KiCad, Onshape, Seeed XIAO RP2040, KMK, Hack Club Blueprint**

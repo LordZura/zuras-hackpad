@@ -52,30 +52,33 @@ Designed, modeled, and PCB-routed as a Hack Club *Blueprint* submission.
 | 8 | M3 screws + heat-set inserts | 4 | For case assembly |
 | 9 | Custom 2-layer PCB | 1 | ≤100×100 mm |
 
----
+----
 
-## 🧬 System Layout
+## System Layout
 
-### Pin Usage Summary
+**XIAO RP2040 → Components (from KiCad)**
 
-**XIAO RP2040 → Components**
+- **SW1 (CP key)** → GPIO26 / A0  
+- **SW2 (FC key)** → GPIO27 / A1  
+- **SW3 (OT key)** → GPIO28 / A2  
+- **SW4 (LFN key)** → GPIO29 / A3  
 
-- **SDA (GPIO6)** → OLED SDA  
-- **SCL (GPIO7)** → OLED SCL  
-- **GPIO0** → Encoder A  
-- **GPIO1** → Encoder B  
-- **GPIO29 (A3)** → Encoder Switch  
-- **GPIO2** → SK6812 DIN  
-- **GND** → All component grounds  
-- **3V3** → OLED & SK6812 VDD
+- **Rotary Encoder**
+  - A → GPIO2 / SCK  
+  - B → GPIO4 / MISO  
+  - C → GND  
 
-**LEDs:**
-- LED1 DIN ← XIAO GPIO2  
-- LED1 DOUT → LED2 DIN
+- **RGB LEDs (SK6812 MINI)**
+  - XIAO GPIO0 / TX → D1 DIN  
+  - D1 DOUT → D2 DIN  
+  - VDD of D1 & D2 → +5 V (VBUS)  
+  - VSS of D1 & D2 → GND  
 
-**Switches (4× SW_Push):**
-- Each switch → 1 GPIO pin (A0, A1, A2, A3 etc.)  
-- Other side → GND
+- **0.91" I²C OLED Header (J1)**
+  - Pin 1 → GND  
+  - Pin 2 → 3V3  
+  - Pin 3 → SCL (GPIO7)  
+  - Pin 4 → SDA (GPIO6)
 
 ---
 

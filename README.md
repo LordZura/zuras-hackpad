@@ -143,6 +143,11 @@ Stored in:
 
 Firmware/main.py
 
+- Copy CircuitPython UF2 onto the board
+- Drag the `KMK` folder + `boot.py` (from KMK) onto the USB drive
+- Copy `main.py` from this folder onto the drive
+- Press reset – the macropad should start working
+
 ---
 
 ## 🏗 Build Steps

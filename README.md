@@ -96,13 +96,11 @@ zuras-hackpad/
 
 ## 📸 Required Screenshots (for submission)
 
-Add these to the repository or to a /docs/ folder:
-
-- Screenshot of the entire HackPad (3D model)  
-- Screenshot of the Schematic  
-- Screenshot of the PCB Layout  
-- Screenshot of the Case (top, bottom, assembled)  
-- BOM (already included above)
+![HackPad top part](Images/Top.png)
+![HackPad bottom part](images/Bottom.png)
+![HackPad full model](images/Full.png)
+![HackPad PCB](images/PCB.png)
+![HackPad schematic](images/SCH.png)
 
 ---
 

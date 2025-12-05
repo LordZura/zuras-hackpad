@@ -1,15 +1,15 @@
-# 🎛 Zura’s HackPad  
+Zura’s HackPad  
 A fully custom Linux-focused macropad featuring 4 programmable hotkeys, a rotary encoder with push switch, RGB underglow, and a 0.91” I²C OLED display — all powered by a Seeed XIAO RP2040.  
 Designed, modeled, and routed entirely for the Hack Club *Blueprint* program.
 
 ---
 
-## ✨ Features
+## Features
 
-### 🔹 Current Working Features (Firmware-ready)
+### Current Working Features
 These are implemented in `main.py` now.
 
-#### 🧷 4 Macro Keys
+#### 4 Macro Keys
 | Key | Name | Current Behavior |
 |-----|------|------------------|
 | **CP** | Copy | Sends `Ctrl + C` |
@@ -17,27 +17,26 @@ These are implemented in `main.py` now.
 | **OT** | Open Terminal | Sends `Ctrl + Alt + T` |
 | **LFN** | Fn Lock | Sends `F14` (used by Linux for Fn-Lock on some systems) |
 
-#### 🎚 Rotary Encoder
+#### Rotary Encoder
 - Rotate: Volume Up / Down  
 - Press: currently basic input (extended features planned)
 
-#### 🌈 RGB Underglow (SK6812 MINI)
+#### RGB Underglow (SK6812 MINI)
 - 2 LED chain  
 - Controlled via GPIO0  
 - Basic color output active (animations planned)
 
 ---
 
-### 🔹 Planned / Future Features
-These are intended features, not required for submission.
+### Planned / Future Features
 
-#### 🧷 Smart Copy/Paste
+#### Smart Copy/Paste
 - First press copies  
 - Second press pastes  
 - Clipboard-empty → paste anyway  
 
 #### 🎚 Encoder Modes
-- Cycle between: Volume → Brightness → Media → Custom  
+- Cycle between: Volume - Brightness - Media - Custom  
 
 #### 🖥 OLED Display
 - Clipboard indicator  
@@ -48,7 +47,7 @@ These are intended features, not required for submission.
 
 ---
 
-## 🧱 Bill of Materials (BOM)
+## Bill of Materials (BOM)
 
 | # | Component | Qty | Notes |
 |---|-----------|-----|-------|
@@ -64,7 +63,7 @@ These are intended features, not required for submission.
 
 ---
 
-## 🔌 System Layout  
+## System Layout  
 (Directly from KiCad nets)
 
 ### Switches → XIAO
@@ -92,7 +91,7 @@ These are intended features, not required for submission.
 
 ---
 
-## 🗂 Project Structure
+## Project Structure
 
 zuras-hackpad/
 ├── CAD/
@@ -118,70 +117,35 @@ zuras-hackpad/
 
 ---
 
-## 📸 Required Screenshots
+## Required Screenshots
 
-### 🔹 Top View  
+### Top View  
 ![HackPad Top](Images/Top.png)
 
-### 🔹 Bottom View  
+### Bottom View  
 ![HackPad Bottom](Images/Bottom.png)
 
-### 🔹 3D Model  
+### 3D Model  
 ![HackPad Full Model](Images/Full.png)
 
-### 🔹 PCB – Front  
+### PCB – Front  
 ![HackPad PCB Front](Images/PDC-Front.png)
 
-### 🔹 PCB – Back  
+### PCB – Back  
 ![HackPad PCB Back](Images/PDC-Back.png)
 
-### 🔹 PCB – Final Routing  
+### PCB – Final Routing  
 ![HackPad PCB Final](Images/PDC-Finish.png)
 
-### 🔹 Schematic  
+### Schematic  
 ![HackPad Schematic](Images/Schematic.png)
 
-### 🔹 Debug  
+### Debug  
 ![HackPad Debug](Images/Debug.png)
 
 ---
 
-## 🔌 Firmware (KMK / CircuitPython)
-
-Firmware currently supports:
-- 4 switches  
-- Rotary encoder  
-- SK6812 LEDs  
-- Basic macros  
-
-### Flashing Steps
-1. Flash CircuitPython UF2  
-2. Copy KMK folder + boot.py  
-3. Copy `main.py`  
-4. Reset → starts running  
-
----
-
-## 🏗 Build Steps
-
-### PCB
-- Export Gerbers  
-- Order 2-layer board
-
-### Case
-- Export STEP/STL  
-- 3D print  
-- Add heat-sets  
-- Install parts  
-
-### Assembly
-- Solder components  
-- Screw case  
-- Flash firmware  
-
----
-
-## 🚀 Submission Checklist
+## Submission Checklist
 - [x] PCB ≤100×100 mm  
 - [x] 2 layers  
 - [x] XIAO RP2040 (TH)  
@@ -194,11 +158,11 @@ Firmware currently supports:
 
 ---
 
-## 🧾 License
+## License
 MIT License recommended.
 
 ---
 
-## 🙌 Credits
+## Credits
 Created by **Zura (LordZura)**  
 Powered by **KiCad, Onshape, Seeed XIAO RP2040, KMK, Hack Club Blueprint**

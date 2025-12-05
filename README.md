@@ -1,4 +1,4 @@
-Zura’s HackPad  
+# Zura’s HackPad  
 A fully custom Linux-focused macropad featuring 4 programmable hotkeys, a rotary encoder with push switch, RGB underglow, and a 0.91” I²C OLED display — all powered by a Seeed XIAO RP2040.  
 Designed, modeled, and routed entirely for the Hack Club *Blueprint* program.
 

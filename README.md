@@ -35,10 +35,10 @@ These are implemented in `main.py` now.
 - Second press pastes  
 - Clipboard-empty → paste anyway  
 
-#### 🎚 Encoder Modes
+#### Encoder Modes
 - Cycle between: Volume - Brightness - Media - Custom  
 
-#### 🖥 OLED Display
+#### OLED Display
 - Clipboard indicator  
 - Volume & brightness  
 - Battery/time  

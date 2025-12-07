@@ -1,5 +1,5 @@
 # Zura’s HackPad  
-A fully custom Linux-focused macropad featuring 4 programmable hotkeys, a rotary encoder with push switch, RGB underglow, and a 0.91” I²C OLED display — all powered by a Seeed XIAO RP2040.  
+A fully custom Linux-focused macropad featuring 4 programmable hotkeys, a rotary encoder with push switch, RGB underglow, and a 0.91” I²C OLED display all powered by a Seeed XIAO RP2040.  
 Designed, modeled, and routed entirely for the Hack Club *Blueprint* program.
 
 ---
@@ -10,12 +10,10 @@ Designed, modeled, and routed entirely for the Hack Club *Blueprint* program.
 These are implemented in `main.py` now.
 
 #### 4 Macro Keys
-| Key | Name | Current Behavior |
-|-----|------|------------------|
-| **CP** | Copy | Sends `Ctrl + C` |
-| **FC** | Folder Create | Sends `Ctrl + Shift + N` |
-| **OT** | Open Terminal | Sends `Ctrl + Alt + T` |
-| **LFN** | Fn Lock | Sends `F14` (used by Linux for Fn-Lock on some systems) |
+**CP** | Copy | Sends `Ctrl + C` |
+**FC** | Folder Create | Sends `Ctrl + Shift + N` |
+**OT** | Open Terminal | Sends `Ctrl + Alt + T` |
+**LFN** | Fn Lock | Sends `F14`|
 
 #### Rotary Encoder
 - Rotate: Volume Up / Down  
@@ -33,7 +31,7 @@ These are implemented in `main.py` now.
 #### Smart Copy/Paste
 - First press copies  
 - Second press pastes  
-- Clipboard-empty → paste anyway  
+- Clipboard-empty - paste anyway  
 
 #### Encoder Modes
 - Cycle between: Volume - Brightness - Media - Custom  
@@ -49,45 +47,62 @@ These are implemented in `main.py` now.
 
 ## Bill of Materials (BOM)
 
-| # | Component | Qty | Notes |
-|---|-----------|-----|-------|
-| 1 | Seeed XIAO RP2040 (TH) | 1 | Main MCU |
-| 2 | MX Mechanical Switches | 4 | Cherry-MX compatible |
-| 3 | EC11 Rotary Encoder w/ Switch | 1 | A/B/C pins + push |
-| 4 | SK6812 MINI LEDs | 2 | DIN → DOUT chain |
-| 5 | 0.91" I²C OLED Display | 1 | GND/VCC/SCL/SDA |
-| 6 | 4-pin Female Header | 1 | For OLED |
-| 7 | Keycaps | 4 | MX |
-| 8 | M3 Screws + Heat-Set Inserts | 4 | Case |
-| 9 | Custom PCB (2-layer) | 1 | ≤100×100 mm |
+Bill of Materials (BOM)
+
+1. Seeed XIAO RP2040 – 1 piece  
+   The main controller board.
+
+2. MX-style switches – 4 pieces  
+   Any standard Cherry MX compatible switches.
+
+3. EC11 rotary encoder (with built-in button) – 1 piece  
+   Has A/B pins and a push switch.
+
+4. SK6812 Mini LEDs – 2 pieces  
+   Addressable RGB LEDs, chained together.
+
+5. 0.91" I2C OLED screen – 1 piece  
+   Uses GND, VCC, SCL, and SDA.
+
+6. 4-pin female header – 1 piece  
+   For plugging in the OLED.
+
+7. MX keycaps – 4 pieces  
+   Any MX-compatible keycaps.
+
+8. M3 screws + heat-set inserts – 4 sets  
+   Used to assemble the case.
+
+9. Custom PCB (2-layer) – 1 piece  
+   Smaller than 100×100 mm.
 
 ---
 
 ## System Layout  
 (Directly from KiCad nets)
 
-### Switches → XIAO
-- SW1 → GPIO26  
-- SW2 → GPIO27  
-- SW3 → GPIO28  
-- SW4 → GPIO29  
+### Switches - XIAO
+- SW1 - GPIO26  
+- SW2 - GPIO27  
+- SW3 - GPIO28  
+- SW4 - GPIO29  
 
 ### Rotary Encoder
-- A → GPIO2  
-- B → GPIO4  
-- C → GND  
+- A - GPIO2  
+- B - GPIO4  
+- C - GND  
 
 ### RGB LEDs (SK6812)
-- MCU GPIO0 → D1 DIN  
-- D1 DOUT → D2 DIN  
-- VDD → +5V  
-- VSS → GND  
+- MCU GPIO0 - D1 DIN  
+- D1 DOUT - D2 DIN  
+- VDD - +5V  
+- VSS - GND  
 
 ### OLED Header (J1)
-- Pin 1 → GND  
-- Pin 2 → 3V3  
-- Pin 3 → SCL (GPIO7)  
-- Pin 4 → SDA (GPIO6)
+- Pin 1 - GND  
+- Pin 2 - 3V3  
+- Pin 3 - SCL (GPIO7)  
+- Pin 4 - SDA (GPIO6)
 
 ---
 
@@ -147,7 +162,3 @@ zuras-hackpad/
 ![HackPad Debug](Images/Debug.png)
 
 ---
-
-## Credits
-Created by **Zura (LordZura)**  
-Powered by **KiCad, Onshape, Seeed XIAO RP2040, KMK, Hack Club Blueprint**

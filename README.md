@@ -10,10 +10,10 @@ Designed, modeled, and routed entirely for the Hack Club *Blueprint* program.
 These are implemented in `main.py` now.
 
 #### 4 Macro Keys
-**CP** | Copy | Sends `Ctrl + C` |
-**FC** | Folder Create | Sends `Ctrl + Shift + N` |
-**OT** | Open Terminal | Sends `Ctrl + Alt + T` |
-**LFN** | Fn Lock | Sends `F14`|
+- **CP** | Copy | Sends `Ctrl + C` |
+- **FC** | Folder Create | Sends `Ctrl + Shift + N` |
+- **OT** | Open Terminal | Sends `Ctrl + Alt + T` |
+- **LFN** | Fn Lock | Sends `F14`|
 
 #### Rotary Encoder
 - Rotate: Volume Up / Down  
